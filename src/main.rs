@@ -3,9 +3,32 @@ fn main() {
     let s = String::from("Hello, world");
     let s_disemvowel = disemvowel(&s);
 
-    println!("s was '{}', and without vowels is '{}'.", s, s_disemvowel);
+    println!("{:?}",s_disemvowel);
+    //println!("s was '{}', and without vowels is '{}'.", s, s_disemvowel);
 }
 
+fn disemvowel(s: &str)->String{
+    let mut result = Vec:: new();
+    let s_disemvoweled = s.clone();
+
+    for c in s_disemvoweled.chars(){
+        //let mut s_disemvowel1 = String::from(s);
+        if is_not_vowel(&c){
+            result.push(c);
+        }
+    }
+    let my_string: String = result.into_iter().collect();
+    return my_string;
+}
+fn is_not_vowel(the_char: &char)-> bool{
+    let mut bool_val = true;
+    let vec_vowel = vec!['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    if vec_vowel.contains(the_char) {
+        bool_val = false;
+    }
+    bool_val
+
+}
 // Everything from here down is Rust test code. You shouldn't need to 
 // change any of this. 
 //
