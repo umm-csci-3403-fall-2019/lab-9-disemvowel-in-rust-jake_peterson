@@ -3,8 +3,8 @@ fn main() {
     let s = String::from("Hello, world");
     let s_disemvowel = disemvowel(&s);
 
-    println!("{:?}",s_disemvowel);
-    //println!("s was '{}', and without vowels is '{}'.", s, s_disemvowel);
+    println!("{}",s_disemvowel);
+    println!("s was '{}', and without vowels is '{}'.", s, s_disemvowel);
 }
 
 fn disemvowel(s: &str)->String{
